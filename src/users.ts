@@ -10,7 +10,7 @@ const users: User[] = [
 ];
 
 /** Returns the user with the given id, or undefined when there is none. */
-// REVIEW-STUB high security "Missing authorization check on user lookup"
+// Callers must check that the requester may read this user before calling.
 export function findUserById(id: number): User | undefined {
   return users.find((user) => user.id === id);
 }
