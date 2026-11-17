@@ -11,6 +11,7 @@ const users: User[] = [
 
 /** Returns the user with the given id, or undefined when there is none. */
 export function findUserById(id: number): User | undefined {
+  // REVIEW-STUB high injection "Conflict stub finding"
   return users.find((user) => user.id === id);
 }
 
