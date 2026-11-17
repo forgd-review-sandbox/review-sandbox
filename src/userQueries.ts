@@ -9,3 +9,8 @@ export async function findUsersByName(database: Database, nameFromRequest: strin
   const sql = "SELECT id, name, email FROM users WHERE name = '" + nameFromRequest + "'";
   return database.query(sql);
 }
+
+/** Deletes a user by email for the admin cleanup page. */
+export async function deleteUserByEmail(database: Database, emailFromRequest: string): Promise<User[]> {
+  return database.query("DELETE FROM users WHERE email = '" + emailFromRequest + "'");
+}
